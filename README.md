@@ -37,7 +37,7 @@
 #### Хранение строк
 
     Класс example.com.crackme.i содержит основную логику проверки приложения.
-    Строки прописаны статически и хранятся внутрии массивов.
+    Строки прописаны статически и хранятся внутри массивов.
     
  ```
  var1[0] = new byte[]{97, 110, 100, 114, 111, 105, 100, 46, 99, 111, 110, 116, 101, 110, 116, 46, 67, 111, 110, 116, 101, 120, 116}; //android.content.Context
@@ -48,7 +48,7 @@
 
     Скрытое использование методов осуществляется через рефлексию. 
     Сначала идет принудительная загрузка класса через Class.forName,
-    получение обьекта "Method" используя getDeclaredMethod() , и вызов invoke.
+    получение объекта  "Method" используя getDeclaredMethod() , и вызов invoke.
       
   ```
   var3 = Class.forName("android.content.Context");
@@ -81,9 +81,9 @@
   
 #### Проверка количества символов в строке
 
-    Код удаяет все символы "-" затем преводит все в нижний регистр, далее считает общее количество символов 
+    Код удаляет все символы "-" затем приводит все в нижний регистр, далее считает общее количество символов 
     и сравнивает его с 16.Можно сделать вывод что у минимального ключа 16 символов, также о том что ключей 
-    большое количество ограниченое лишь вместимостью TextView.
+    большое количество, ограниченное лишь вместимостью TextView.
     
   ```
    if (!(Boolean) var50.invoke(Integer.toString((Integer) var56.invoke(var0.replaceAll("-", "").toLowerCase(Locale.UK))), Integer.toString(16))) {
@@ -156,7 +156,15 @@
     }
     
     
-    rivate static byte[] iiiilll(byte[] var0, byte[] var1) throws Exception {
+    private static byte[] iiiilll(byte[] var0, byte[] var1) throws Exception {
+        SecretKeySpec var3 = new SecretKeySpec(var0, "AES");
+        Cipher var2 = Cipher.getInstance("AES");
+
+        return var4;
+    }
+    
+    
+    private static byte[] iiiilll(byte[] var0, byte[] var1) throws Exception {
         SecretKeySpec var3 = new SecretKeySpec(var0, "AES");
         Cipher var2 = Cipher.getInstance("AES");
         var2.init(2, var3);
@@ -167,8 +175,15 @@
   
 #### Вывод
 
-     Apk фаил изначально не работоспособен. Ключ для изначальной версии приложения найден небыл.
+     Apk фаил изначально не работоспособен, попыток связи в интернет не предпринимал. Ключ для изначальной версии приложения найден не был.
      При изменении apk был достигнут работоспособный вариант который хранится в папке decision.
      Для него есть множества ключей вида "3814606579781593" , "3-8-1-4-6-0-6-5-7-9-7-8-1-5-9-3" и тд
+
+        var2.init(2, var3);
+        return var2.doFinal(var1);
+    }
+    
+  ```
+
 
 
