@@ -154,15 +154,7 @@
 
         return var4;
     }
-    
-    
-    private static byte[] iiiilll(byte[] var0, byte[] var1) throws Exception {
-        SecretKeySpec var3 = new SecretKeySpec(var0, "AES");
-        Cipher var2 = Cipher.getInstance("AES");
-
-        return var4;
-    }
-    
+   
     
     private static byte[] iiiilll(byte[] var0, byte[] var1) throws Exception {
         SecretKeySpec var3 = new SecretKeySpec(var0, "AES");
